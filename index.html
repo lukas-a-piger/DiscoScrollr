@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>was gevydfdht ab</title>
+    <link href="style.css" ref="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+      <style>
+          img{
+          max-width: 70%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          }
+      </style>
+  </head>
+  <body>
+<h1>This is DiscoScrollr</h1>
+
+<img id="vinyl" src="vinyl.png" alt="HTML5 Icon">
+
+<script>
+  var controller = new ScrollMagic.Controller();
+  var rotate_circle = TweenMax.to("section .vinyl", 0.5, {rotation: 360, ease: Linear.easeNone});
+  var scene_h = new ScrollMagic.Scene({triggerElement: "#trigger_element", duration: 1600}).setTween(rotate_circle).addTo(controller);
+
+</script>>
+
+
+  </body>
+</html>
