@@ -2,66 +2,60 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>was gevydfdht ab</title>
-    <link href="style.css" ref="stylesheet">
-
-      <style>
-          .vinylClass{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 80%;
-            padding: -200px 0;
-          }
-
-          h1{
-            font-size: 10vw;
-            text-align: center;
-            font-family: "Lucida Console", Courier, monospace;
-            }
-      </style>
+    <title>DISCOSCROLL</title>
+    <link href="style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   </head>
 
 <body>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="circletype.min.js"></script>
 
-  <h1>THIS IS DISCOSCROLL</h1>
+  <div id="TitelId" class="Titel">
+      <h1>THIS<br> IS <br>DISCOSCROLL</h1>
+  </div>
 
+<!--Der Text für CircleType-->
+<a href="https://www.google.com/search?q=dj+&tbm=isch&ved=2ahUKEwigvsK6we_oAhUJz6QKHRdtAdsQ2-cCegQIABAA&oq=dj+&gs_lcp=CgNpbWcQDDIECCMQJzICCAAyBAgAEEMyBAgAEEMyAggAMgQIABBDMgQIABBDMgIIADIECAAQQzIECAAQQ1DcLVjcLWCFQGgAcAB4AIAB4QGIAeEBkgEDMi0xmAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img&ei=taeZXuCPPImekwWX2oXYDQ&bih=678&biw=824&rlz=1C1CHBD_deCH755CH755"><div class="circular-text">
+  <span id="rotated"> bilder  •  bilder  •  bilder  •  bilder  • bilder • bilder • </span>
+  </div></a>
 
+<a href="https://www.google.com/search?q=music&tbm=isch&ved=2ahUKEwjh0My_we_oAhVVt6QKHeM8DJAQ2-cCegQIABAA&oq=music&gs_lcp=CgNpbWcQAzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzoECCMQJzoCCABQo-8CWN_0AmCf-AJoAHAAeACAAZMCiAGuBpIBBTAuNC4xmAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img&ei=wKeZXuHwJtXukgXj-bCACQ&bih=678&biw=824&rlz=1C1CHBD_deCH755CH755"><div class="circular-text_1">
+  <span id="rotated1">sound  •  sound  •  sound  •  sound  • sound • sound</span>
+  </div></a>
+
+<a href="https://www.google.com/search?q=bus&tbm=isch&ved=2ahUKEwiumajuwe_oAhWHNuwKHR7aD2cQ2-cCegQIABAA&oq=bus&gs_lcp=CgNpbWcQAzIECCMQJzIECCMQJzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIFCAAQgwFQvRhYzx9g9CBoAHAAeACAAZkFiAGaBpIBBzAuMS41LTGYAQCgAQGqAQtnd3Mtd2l6LWltZw&sclient=img&ei=IqiZXq6AJYftsAeetL-4Bg&bih=678&biw=824&rlz=1C1CHBD_deCH755CH755"><div class="circular-text_2">
+    <span id="rotated2">tour  •  tour  •  tour  •  tour  •  tour •  tour • tour • </span>
+    </div></a>
+
+<!--Vinyl-->
   <img id="vinyl" class="vinylClass" src="vinyl.png">
 
-  <img id="vinyl" class="vinylClass" src="vinyl.png">
-
-  <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<!--Autoplay funktioniert nur manchmal, wiso auch immer-->
+  <iframe src="On This Hip Hop (Full).mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 
   <audio id="player" autoplay loop>
       <source src="On This Hip Hop (Full).mp3" type="audio/mp3">
   </audio>
 
-  <h1>DANKE FÜRS ZUELUEGE</h1>
-
 <script>
-  //Init ScrollMagic
-  var controller = new ScrollMagic.Controller();
 
-  var scene = new ScrollMagic.Scene({
-    triggerElement: '#vinyl', // Szene startet, wenn dieses Element erreicht wird
-    duration: 10000 // Das Element wird -px angepinnt
-  })
-  .addIndicators() //Zeigt Indikatoren (trigger,start-point,end-point) an der Seite an
-  .setPin('#vinyl') // Element das angepinnt werden soll
+//Befehl um Text im Kreis anzuordnen
+const circleType = new CircleType(document.getElementById("rotated")).radius();
+
+const circleType1 = new CircleType(document.getElementById("rotated1")).radius();
+
+const circleType2 = new CircleType(document.getElementById("rotated2")).radius();
 
 
-  // fügt die Szene dem Controller hinzu
-  controller.addScene(scene);
 
 //Jquery Rotation
   $(window).scroll(function() {
 
   var offset = $(window).scrollTop(); //steuert, ab wann die Varibale beginnt
-	offset     = offset * 0.05; //geschwindigkeit der Roatation
+	offset     = offset * 0.08; //geschwindigkeit der Roatation
 
   // Css Variable wird hingzugefügt
   $('#vinyl').css({
@@ -71,7 +65,45 @@
     '-ms-transform': 'rotate(' + offset + 'deg)',
     'transform': 'rotate(' + offset + 'deg)',
   });
+});
 
+$(window).scroll(function() {
+    var offset = $(window).scrollTop();
+    offset = offset * 0.07;
+
+    $(".circular-text").css({
+        "-moz-transform": "rotate(" + offset + "deg)",
+        "-webkit-transform": "rotate(" + offset + "deg)",
+        "-o-transform": "rotate(" + offset + "deg)",
+        "-ms-transform": "rotate(" + offset + "deg)",
+        transform: "rotate(" + offset + "deg)"
+     });
+});
+
+$(window).scroll(function() {
+    var offset = $(window).scrollTop();
+    offset = offset * 0.07;
+
+    $(".circular-text_1").css({
+        "-moz-transform": "rotate(" + offset + "deg)",
+        "-webkit-transform": "rotate(" + offset + "deg)",
+        "-o-transform": "rotate(" + offset + "deg)",
+        "-ms-transform": "rotate(" + offset + "deg)",
+        transform: "rotate(" + offset + "deg)"
+     });
+});
+
+$(window).scroll(function() {
+    var offset = $(window).scrollTop();
+    offset = offset * 0.07;
+
+    $(".circular-text_2").css({
+        "-moz-transform": "rotate(" + offset + "deg)",
+        "-webkit-transform": "rotate(" + offset + "deg)",
+        "-o-transform": "rotate(" + offset + "deg)",
+        "-ms-transform": "rotate(" + offset + "deg)",
+        transform: "rotate(" + offset + "deg)"
+     });
 });
 </script>>
 
